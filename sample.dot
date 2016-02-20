@@ -1,0 +1,5 @@
+digraph speedo {
+	collector_2_nl -> concentrator;
+	collector_3_nl -> concentrator;
+	collector_1_us -> concentrator;
+}
