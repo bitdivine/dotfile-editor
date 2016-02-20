@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+var express = require('express')
+  , morgan  = require('morgan');
+
+
+// CONFIG
+
+var port = process.env.PORT || 3011;
+
+// SERVER
+var app = express();
+app.use(morgan('combined'));
+app.use('/', express.static(__dirname+'/../public'));
+app.listen(port, function(){
+	console.log("Listening on port", port);
+});

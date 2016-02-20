@@ -1,0 +1,29 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="dotfile-editor.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+	<script src="http://cpettitt.github.io/project/graphlib-dot/v0.4.10/graphlib-dot.min.js"></script>
+	<script src="http://cpettitt.github.io/project/dagre-d3/v0.1.5/dagre-d3.min.js"></script>
+	<script src="dotfile-editor.js"></script>
+</head>
+
+<body>
+  <h2>. edit</h2>
+  <div id="dot_edit">
+    <div id="inputPanel">
+      <input    id="graphUrl" type="url" placeholder="sample.dot">
+      <textarea id="graphText">
+
+digraph {
+	a -> b;
+}
+
+      </textarea>
+    </div>
+    <svg id="graphContainer">
+      <g/>
+    </svg>
+  </div>
+</body>
+
+</html>
