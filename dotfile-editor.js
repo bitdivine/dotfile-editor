@@ -7,6 +7,25 @@ function spike(url){console.log("spike:",url);new Image().src=protoUrl(url);}
 
 	function keyvals(dict, cb){return Object.keys(dict).map(function(k){return cb(k,dict[k]);});}
 
+	// From StackOverflow: http://stackoverflow.com/questions/3665115/create-a-file-in-memory-for-user-to-download-not-through-server
+	function download(filename, text) {
+		var element = document.createElement('a');
+		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+		element.setAttribute('download', filename);
+		element.style.display = 'none';
+		document.body.appendChild(element);
+		element.click();
+		document.body.removeChild(element);
+	}
+	function download_dot(){
+		download("graph.txt", document.getElementById('graphText').value);
+	}
+	function download_json(){
+		var graph = graphlibDot.read( document.getElementById('graphText').value);
+		var json  = JSON.stringify(dagreD3.graphlib.json.write(graph),null,2);
+		download("graph.json", json);
+	}
+
 	function drawGraph(){
 		console.log("Loaded");
 		// Parse the DOT syntax into a graphlib object.
@@ -61,6 +80,8 @@ graph_json
 	function onLoad(){
 		document.getElementById('graphText').addEventListener('input', drawGraph);
 		document.getElementById('graphUrl').addEventListener('change', urlBoxChange);
+		document.getElementById('download_dot').addEventListener('click', download_dot);
+		document.getElementById('download_json').addEventListener('click', download_json);
 		urlHashChange();
 	}
 

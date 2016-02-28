@@ -1,0 +1,98 @@
+{
+  "options": {
+    "directed": true,
+    "multigraph": true,
+    "compound": true
+  },
+  "nodes": [
+    {
+      "v": "collector_2_nl",
+      "value": {
+        "shape": "diamond",
+        "style": "fill: white; stroke-width: 1.5px;stroke:blue;",
+        "label": "collector-2-nl"
+      }
+    },
+    {
+      "v": "collector_3_nl",
+      "value": {
+        "shape": "circle",
+        "style": "fill: white; stroke-width: 1.5px;stroke:blue;",
+        "label": "collector-2-nl"
+      }
+    },
+    {
+      "v": "collector_4_nl",
+      "value": {
+        "shape": "rect",
+        "style": "fill: white; stroke-width: 1.5px;stroke:blue;",
+        "label": "collector-2-nl"
+      }
+    },
+    {
+      "v": "collector_5_nl",
+      "value": {
+        "shape": "ellipse",
+        "style": "fill: white; stroke-width: 1.5px;stroke:blue;",
+        "label": "collector-2-nl"
+      }
+    },
+    {
+      "v": "concentrator",
+      "value": {
+        "labelType": "html",
+        "label": "<a href='http://github.com'>GitHub</a>"
+      }
+    },
+    {
+      "v": "collector_1_us",
+      "value": {}
+    },
+    {
+      "v": "pink",
+      "value": {
+        "style": "fill:#D0C0A0"
+      }
+    },
+    {
+      "v": "pink1",
+      "value": {},
+      "parent": "pink"
+    },
+    {
+      "v": "pink2",
+      "value": {},
+      "parent": "pink"
+    }
+  ],
+  "edges": [
+    {
+      "v": "collector_2_nl",
+      "w": "concentrator",
+      "value": {}
+    },
+    {
+      "v": "collector_3_nl",
+      "w": "concentrator",
+      "value": {}
+    },
+    {
+      "v": "collector_1_us",
+      "w": "concentrator",
+      "value": {}
+    },
+    {
+      "v": "pink1",
+      "w": "pink2",
+      "value": {}
+    },
+    {
+      "v": "pink2",
+      "w": "concentrator",
+      "value": {}
+    }
+  ],
+  "value": {
+    "id": "speedo"
+  }
+}
