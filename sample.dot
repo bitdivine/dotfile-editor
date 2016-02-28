@@ -9,4 +9,10 @@ digraph speedo {
 	collector_2_nl -> concentrator;
 	collector_3_nl -> concentrator;
 	collector_1_us -> concentrator;
+
+	subgraph pink {
+		style="fill:#D0C0A0";
+		pink1 -> pink2
+	}
+	pink2 -> concentrator;
 }
