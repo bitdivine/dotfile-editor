@@ -1,13 +1,14 @@
 #inputPanel {
-	width: 40%;
-	display: inline-block;
+	width: 90%;
+	display: block;
+	margin-bottom: 2ex;
 }
 #graphUrl {
 	width: 90%;
 }
 #graphText {
 	width: 90%;
-	height: 80%;
+	height: 30ex;
 }
 
 svg {

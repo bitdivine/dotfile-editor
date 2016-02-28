@@ -1,4 +1,11 @@
 digraph speedo {
+	// Optional but fun labels:
+	collector_2_nl [shape=diamond style="fill: white; stroke-width: 1.5px;stroke:blue;" label="collector-2-nl"];
+	collector_3_nl [shape=circle style="fill: white; stroke-width: 1.5px;stroke:blue;" label="collector-2-nl"];
+	collector_4_nl [shape=rect style="fill: white; stroke-width: 1.5px;stroke:blue;" label="collector-2-nl"];
+	collector_5_nl [shape=ellipse style="fill: white; stroke-width: 1.5px;stroke:blue;" label="collector-2-nl"];
+	concentrator [labelType=html label="<a href='http://github.com'>GitHub</a>"];
+
 	collector_2_nl -> concentrator;
 	collector_3_nl -> concentrator;
 	collector_1_us -> concentrator;

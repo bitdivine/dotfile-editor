@@ -1,0 +1,9 @@
+[submodule "modules/graphlib"]
+	path = modules/graphlib
+	url = https://github.com/cpettitt/graphlib.git
+[submodule "modules/dagre-d3"]
+	path = modules/dagre-d3
+	url = https://github.com/cpettitt/dagre-d3.git
+[submodule "modules/graphlib-dot"]
+	path = modules/graphlib-dot
+	url = https://github.com/cpettitt/graphlib-dot.git
