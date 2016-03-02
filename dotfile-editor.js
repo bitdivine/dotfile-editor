@@ -18,12 +18,19 @@ function spike(url){console.log("spike:",url);new Image().src=protoUrl(url);}
 		document.body.removeChild(element);
 	}
 	function download_dot(){
-		download("graph.txt", document.getElementById('graphText').value);
+		var dot   = document.getElementById('graphText').value;
+		var graph = graphlibDot.read( dot );
+		var data  = dagreD3.graphlib.json.write(graph);
+		var name  = data &&  data.value && data.value.id || graph;
+		download(name+".txt", dot);
 	}
 	function download_json(){
-		var graph = graphlibDot.read( document.getElementById('graphText').value);
-		var json  = JSON.stringify(dagreD3.graphlib.json.write(graph),null,2);
-		download("graph.json", json);
+		var dot   = document.getElementById('graphText').value;
+		var graph = graphlibDot.read( dot );
+		var data  = dagreD3.graphlib.json.write(graph);
+		var name  = data &&  data.value && data.value.id || graph;
+		var json  = JSON.stringify(data,null,2);
+		download(name+".json", json);
 	}
 
 	function drawGraph(){
