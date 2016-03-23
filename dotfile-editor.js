@@ -32,6 +32,18 @@ function spike(url){console.log("spike:",url);new Image().src=protoUrl(url);}
 		var json  = JSON.stringify(data,null,2);
 		download(name+".json", json);
 	}
+	function download_svg(){
+		var dot   = document.getElementById('graphText').value;
+		var graph = graphlibDot.read( dot );
+		var data  = dagreD3.graphlib.json.write(graph);
+		var name  = data &&  data.value && data.value.id || graph;
+		var svg  =
+		[ '<?xml version="1.0" standalone="no"?>'
+		, '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">'
+		, document.querySelector('svg').outerHTML
+		].join("\n");
+		download(name+".svg", svg);
+	}
 
 	function drawGraph(){
 		console.log("Loaded");
@@ -89,6 +101,7 @@ graph_json
 		document.getElementById('graphUrl').addEventListener('change', urlBoxChange);
 		document.getElementById('download_dot').addEventListener('click', download_dot);
 		document.getElementById('download_json').addEventListener('click', download_json);
+		document.getElementById('download_svg').addEventListener('click', download_svg);
 		urlHashChange();
 	}
 
